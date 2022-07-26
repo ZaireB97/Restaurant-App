@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView startersList;
 
 
+    ExecutorService executor;
     CardView startersCard;
     CardView mainCard;
     CardView dessertCard;
-    ExecutorService executor;
     Handler handler;
 
 
@@ -35,12 +35,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         startersList = findViewById(R.id.recycler_view);
-
-
-//        Dish[] dishArray = getDishes();
-
-//        DishAdapter arrayAdapter = new DishAdapter(dishArray);
-//        startersList.setAdapter(arrayAdapter);
         startersCard = findViewById(R.id.cardViewStarters);
         mainCard = findViewById(R.id.cardViewMainCourse);
         dessertCard = findViewById(R.id.cardViewDessert);
@@ -76,12 +70,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent starterIntent = new Intent(MainActivity.this, StartersActivity.class);
+                        startActivity(starterIntent);
 
-                Intent starterIntent = new Intent(MainActivity.this, StartersActivity.class);
+                    }
+                });
 
-//                        starterIntent.putExtra("starter dishes",dishArray);
-
-                startActivity(starterIntent);
 
             }
 
@@ -94,10 +91,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent mainIntent = new Intent(MainActivity.this, MainCourseActivity.class);
 
-                Intent mainIntent = new Intent(MainActivity.this, MainCourseActivity.class);
+                        startActivity(mainIntent);
+                    }
+                });
 
-                startActivity(mainIntent);
+
             }
         });
     }
@@ -107,9 +110,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent dessertIntent = new Intent(MainActivity.this, DessertActivity.class);
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent dessertIntent = new Intent(MainActivity.this, DessertActivity.class);
 
-                startActivity(dessertIntent);
+                        startActivity(dessertIntent);
+                    }
+                });
 
 
             }
