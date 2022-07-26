@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+
+        <TextView
+            android:id="@+id/restaurantTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="serif-monospace"
+            android:text="Hungry Humans"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/emailAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/restaurantTitle"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-medium"
+            android:padding="6dp"
+            android:text="hungryHumans@somethingmail.com" />
+
+        <TextView
+            android:id="@+id/text_view_phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailAddress"
+            android:layout_centerHorizontal="true"
+            android:text="(555) 666-7777"
+            android:padding="6dp"/>
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewStarters"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_phone_number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/starterimage" />
+
+
+                <TextView
+                    android:id="@+id/viewStarters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Starters"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewMainCourse"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardViewStarters"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/main_course" />
+
+                <TextView
+                    android:id="@+id/textViewMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Main Courses"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewDessert"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardViewMainCourse"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dessert_card_view" />
+
+
+                <TextView
+                    android:id="@+id/textViewDessert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Dessert"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</ScrollView>
